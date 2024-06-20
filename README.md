@@ -1,5 +1,5 @@
 # README
 
 On a cmd:
-> bundle
+> bundle <br>
 > bundle exec jekyll s
