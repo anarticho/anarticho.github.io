@@ -20,7 +20,7 @@ package-lock.json
 .vscode
 !.vscode/settings.json
 !.vscode/extensions.json
-.code-workspace
+anarticho.github.io.code-workspace
 
 # Misc
 _sass/dist
