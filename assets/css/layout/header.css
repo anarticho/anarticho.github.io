@@ -1,0 +1,42 @@
+.site-header {
+  background: #16161a;
+  border-bottom: 1px solid #2a2a2f;
+}
+
+.header-inner {
+  max-width: 90%;
+  margin: auto;
+  padding: 1.5rem 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Site name */
+
+.site-title a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation */
+
+.site-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: white;
+}

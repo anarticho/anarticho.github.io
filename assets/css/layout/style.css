@@ -1,0 +1,14 @@
+/* RESET + GLOBAL */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f0f12;
+  color: #e5e5e5;
+}
+
+.content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 1rem;
+}

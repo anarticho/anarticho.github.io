@@ -1,0 +1,11 @@
+/* Base */
+
+/* Layout */
+@import url("./layout/header.css");
+@import url("./layout/footer.css");
+@import url("./layout/style.css");
+
+/* Components */
+
+/* Pages */
+/* @import url("./pages/home.css"); */
