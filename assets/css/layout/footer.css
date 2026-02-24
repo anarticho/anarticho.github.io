@@ -1,12 +1,12 @@
 .site-footer {
   border-top: 1px solid #2a2a2f;
-  padding: 0.75rem 1rem;        /* compact */
+  padding: 0.5rem 1rem;          /* padding plus petit */
   display: flex;
-  justify-content: space-between; /* logo à gauche, texte à droite */
+  justify-content: space-between;
   align-items: center;
-  font-size: 0.85rem;
-  color: #888;
-  background-color: #000;       /* optionnel : fond noir */
+  background-color: #000;
+  height: 50px;                  /* hauteur fixe du footer */
+  box-sizing: border-box;        /* padding inclus dans la hauteur */
 }
 
 .site-footer a {
@@ -25,6 +25,15 @@
   object-fit: contain;
 }
 
+/* Texte à droite vertical */
 .site-footer .footer-text {
-  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;        /* centré verticalement dans le footer */
+  font-style: italic;  
+  line-height: 1.5;      /* augmente l'espace entre les lignes */
+  font-size: 0.7rem;              /* petite taille pour rester dans le footer */
+  overflow: hidden;               /* ne pas dépasser */
+  text-align: right;
 }
