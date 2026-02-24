@@ -1,12 +1,30 @@
 .site-footer {
   border-top: 1px solid #2a2a2f;
-  padding: 1.5rem 0;
-  text-align: center;
+  padding: 0.75rem 1rem;        /* compact */
+  display: flex;
+  justify-content: space-between; /* logo à gauche, texte à droite */
+  align-items: center;
+  font-size: 0.85rem;
   color: #888;
+  background-color: #000;       /* optionnel : fond noir */
 }
 
-.site-footer .container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 1rem;
+.site-footer a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+.site-footer .social-icons img {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
+}
+
+.site-footer .footer-text {
+  font-style: italic;
 }
