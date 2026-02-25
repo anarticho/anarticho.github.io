@@ -1,10 +1,20 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
-title: Home
+title: Accueil
 lang: fr
 ---
 
-Test
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="wrapper side-panel-open">
+  <div class="side-panel">
+  </div>
+  <button class="side-panel-toggle" type="button">
+    <span class="material-icons sp-icon-open">keyboard_double_arrow_right</span>
+    <span class="material-icons sp-icon-close">keyboard_double_arrow_left</span>
+  </button>
+  <div class="index-body">
+  </div>
+</div>
+
+<script src="{{ '/assets/js/panel.js' | relative_url }}"></script>

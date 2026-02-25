@@ -3,9 +3,9 @@
 /* Layout */
 @import url("./layout/header.css");
 @import url("./layout/footer.css");
-@import url("./layout/style.css");
+@import url("./layout/default.css");
 
 /* Components */
 
 /* Pages */
-/* @import url("./pages/home.css"); */
+@import url("./pages/index.css");
