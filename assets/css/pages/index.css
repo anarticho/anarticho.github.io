@@ -42,7 +42,7 @@ body {
   display: none;
   width: 20vh;
   flex-shrink: 0;
-  padding: 20px;
+  padding: 5px;
   color: #ffffff;
   background: #111111;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
@@ -58,4 +58,144 @@ body {
 
 .side-panel-open .sp-icon-close {
   display: initial !important;
+}
+
+/* Sidebar inner container centré verticalement */
+.side-panel {
+  width: 30vh;
+  background: linear-gradient(to right, #0f0f12, #181818, #2e2e2e);
+  color: white;
+  transition: width 0.3s ease, padding 0.3s ease;
+  overflow: hidden; /* très important pour cacher le contenu */
+  position: relative;
+}
+
+/* Quand rétracté */
+.side-panel.collapsed {
+  width: 0;
+  padding: 0;
+}
+
+/* Boxes générales */
+.box {
+  width: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.side-panel .box {
+  margin: auto 0;
+}
+
+.circle-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  border: 2px solid #9b9b9b;
+}
+
+.box.profile-box {
+  display: flex;                /* row horizontal */
+  flex-direction: row;
+  align-items: center;          /* centre verticalement image et texte */
+  width: 100%;                  /* prend toute la largeur du panel */
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem;
+  border-radius: 12px;
+  gap: 0.5rem;                  /* espace entre image et texte */
+  text-align: left;             /* important pour que le texte reste à droite */
+}
+
+/* Image 2/5 */
+.profile-img {
+  flex: 2;                     /* 2/5 de la box */
+  width: 10%;                  /* occupe tout son flex */
+  height: 100px;                /* hauteur fixe */
+  object-fit: cover;            /* croppe pour remplir la boîte sans déformer */
+  border-radius: 8px;           /* coins arrondis */
+  border: 2px solid #9b9b9b;
+  margin: 0;
+}
+
+/* Texte 3/5 */
+.profile-text {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #e5e5e5;
+}
+
+.profile-text h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+}
+
+.profile-text p {
+  margin: 0.1rem 0;
+  line-height: 1.2rem;
+}
+
+.switch-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.switch-content {
+  flex: 1;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+/* Switch buttons */
+.switch-btn {
+  background: #3a9d23;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 6px;    
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+  color: #000;
+  box-sizing: border-box;
+}
+
+.form-box textarea {
+  height: 5rem;
+  resize: none;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background: #979797;
+  color: white;
+  cursor: pointer;
+  font-size: 0.6rem;       /* ← taille du texte du bouton */
+  font-weight: bold;     /* optionnel, texte plus visible */
+}
+
+.form-box button:hover {
+  background: #727272;
 }
