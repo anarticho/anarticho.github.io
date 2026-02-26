@@ -91,31 +91,27 @@
   /* Cache la navigation par défaut */
   .site-nav {
     position: fixed;
-    top: 10vw;
-    left: -250px;
-    background-color: rgba(0,0,0,0.8); /* semi-transparent si image trop claire */
-    background-blend-mode: darken;
-    background-image: url('/assets/img/header_menu.webp'); /* ton image ici */
+    top: 10.2vw;
+    left: 0;
+    background-color: rgba(0,0,0,0.9);
     
-    background-size: cover;       /* couvre tout le menu */
-    background-position: center;  /* centrée */
-    background-repeat: no-repeat; /* pas de répétition */
-    
-    padding: 1rem;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 0 10px 0;
     min-width: max-content;
-    transition: left 0.3s ease;
     z-index: 1000;
-    max-height: 90vh;
-    overflow-y: auto;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.3s ease, padding 0.3s ease;
   }
 
   .site-nav a {
-    color: #fff; /* plus lisible sur image */
-    text-shadow: 0 0 5px rgba(0,0,0,0.7); /* pour faire ressortir le texte */
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.7);
     text-decoration: none;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
@@ -130,7 +126,9 @@
 
   /* Quand le menu est ouvert */
   .site-nav.active {
-    left: 0; /* glisse depuis la gauche */
+    max-height: 500px;          /* hauteur suffisante pour tous les liens */
+    padding-top: 1rem;          /* padding vertical quand ouvert */
+    padding-bottom: 1rem;
   }
 
   /* Animation burger en croix */
@@ -143,7 +141,7 @@
   .burger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
-
+  
   /* Header : titre à droite */
   .header-inner {
     justify-content: space-between;

@@ -22,7 +22,13 @@
   const nav = document.getElementById('site-nav');
 
   burger.addEventListener('click', () => {
-    nav.classList.toggle('active');
+    if (nav.style.maxHeight) {
+      // Si ouvert → fermer
+      nav.style.maxHeight = null;
+    } else {
+      // Si fermé → ouvrir à la hauteur réelle du contenu
+      nav.style.maxHeight = nav.scrollHeight + "px";
+    }
     burger.classList.toggle('active');
   });
 </script>
