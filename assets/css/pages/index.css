@@ -1,3 +1,4 @@
+/* --- Général --- */
 body {
   margin: 0;
   font-family: sans-serif;
@@ -6,15 +7,17 @@ body {
 
 .wrapper {
   display: flex;
-  min-height: 100%;
+  min-height: 100vh; /* toujours full height */
 }
 
 .main {
   flex-grow: 1;
   padding: 20px;
   overflow-y: auto;
+  transition: margin-left 0.3s ease;
 }
 
+/* --- Toggle du volet --- */
 .side-panel-toggle {
   width: 40px;
   height: 40px;
@@ -38,18 +41,25 @@ body {
   display: none !important;
 }
 
+/* --- Volet latéral --- */
 .side-panel {
-  display: none;
-  width: 20vh;
   flex-shrink: 0;
-  padding: 5px;
-  color: #ffffff;
-  background: #111111;
+  padding: 10px;
+  width: 50vh;
+  background: linear-gradient(to right, #0f0f12, #181818, #2e2e2e);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  color: white;
+  overflow: hidden;
+  position: relative;
+
+  /* Transition pour ouverture/retractation */
+  transition: width 0.3s ease, padding 0.3s ease;
 }
 
+/* Ouvert */
 .side-panel-open .side-panel {
-  display: initial;
+  width: 50vh;
+  padding: 10px;
 }
 
 .side-panel-open .sp-icon-open {
@@ -60,46 +70,51 @@ body {
   display: initial !important;
 }
 
-/* Sidebar inner container centré verticalement */
-.side-panel {
-  width: 30vh;
-  background: linear-gradient(to right, #0f0f12, #181818, #2e2e2e);
-  color: white;
-  transition: width 0.3s ease, padding 0.3s ease;
-  overflow: hidden; /* très important pour cacher le contenu */
-  position: relative;
-}
-
-/* Quand rétracté */
+/* Collapsé */
 .side-panel.collapsed {
   width: 0;
   padding: 0;
 }
 
-/* Boxes générales */
-.box {
-  width: auto;
+/* --- Details/summary --- */
+.side-panel details {
   background: rgba(255, 255, 255, 0.05);
-  padding: 5px;
+  margin: 0.25rem 0;
   border-radius: 12px;
-  text-align: center;
-  font-size: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.side-panel .box {
-  margin: auto 0;
+.side-panel summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
 }
 
-.circle-img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 5px;
-  border: 2px solid #9b9b9b;
+.side-panel summary::-webkit-details-marker {
+  display: none; /* supprime la flèche par défaut */
 }
 
-.box.profile-box {
+/* Contenu rétractable */
+.side-panel details[open] > *:not(summary) {
+  padding: 0.5rem 0.75rem;
+}
+
+/* Icon toggle */
+.summary-icon {
+  transition: transform 0.3s ease;
+}
+
+details[open] .summary-icon {
+  transform: rotate(90deg);
+}
+
+.profile-box {
   display: flex;                /* row horizontal */
   flex-direction: row;
   align-items: center;          /* centre verticalement image et texte */
@@ -111,7 +126,6 @@ body {
   text-align: left;             /* important pour que le texte reste à droite */
 }
 
-/* Image 2/5 */
 .profile-img {
   flex: 2;                     /* 2/5 de la box */
   width: 10%;                  /* occupe tout son flex */
@@ -120,82 +134,4 @@ body {
   border-radius: 8px;           /* coins arrondis */
   border: 2px solid #9b9b9b;
   margin: 0;
-}
-
-/* Texte 3/5 */
-.profile-text {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 0.85rem;
-  color: #e5e5e5;
-}
-
-.profile-text h3 {
-  margin: 0 0 0.25rem 0;
-  font-size: 1rem;
-}
-
-.profile-text p {
-  margin: 0.1rem 0;
-  line-height: 1.2rem;
-}
-
-.switch-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.switch-content {
-  flex: 1;
-  padding: 0.5rem;
-  background: rgba(0,0,0,0.2);
-  border-radius: 8px;
-}
-
-/* Switch buttons */
-.switch-btn {
-  background: #3a9d23;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.form-box input,
-.form-box textarea {
-  width: 100%;
-  padding: 0.4rem;
-  border: none;
-  border-radius: 6px;    
-  margin-bottom: 0.5rem;
-  font-size: 0.6rem;
-  color: #000;
-  box-sizing: border-box;
-}
-
-.form-box textarea {
-  height: 5rem;
-  resize: none;
-}
-
-.form-box button {
-  width: 100%;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 6px;
-  background: #979797;
-  color: white;
-  cursor: pointer;
-  font-size: 0.6rem;       /* ← taille du texte du bouton */
-  font-weight: bold;     /* optionnel, texte plus visible */
-}
-
-.form-box button:hover {
-  background: #727272;
 }
