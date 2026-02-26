@@ -1,11 +1,28 @@
 <header class="site-header">
   <div class="header-inner">
+    <!-- Burger menu pour mobile -->
+    <button class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- Titre -->
     <span class="brand-name">{{ site.title }}</span>
-    <nav class="site-nav">
-      <a href="{{ '/home' | relative_url }}">Accueuil</a>
-      <a href="{{ '/humeur' | relative_url }}">Effusions</a>
-      <a href="{{ '/solitudes' | relative_url }}">Solitudes</a>
-      <a href="{{ '/chemins' | relative_url }}">Chemins</a>
-    </nav>
   </div>
+  <!-- Navigation principale -->
+  <nav class="site-nav" id="site-nav">
+    <a href="{{ '/' | relative_url }}">Acueuil</a>
+    <a href="{{ '/humeur' | relative_url }}">Effusions</a>
+    <a href="{{ '/solitudes' | relative_url }}">Solitudes</a>
+    <a href="{{ '/chemins' | relative_url }}">Anarchives</a>
+  </nav>
 </header>
+<script>
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('site-nav');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.classList.toggle('active');
+  });
+</script>

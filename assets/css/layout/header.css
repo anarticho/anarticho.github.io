@@ -1,3 +1,4 @@
+/* Paramètres généraux du header */
 .site-header {
   background-color: #000;
   background-image: url("/assets/img/banner.webp");
@@ -13,7 +14,10 @@
   border-bottom: 1px solid #2a2a2f;
   box-shadow: inset 0 -2px 5px rgba(0,0,0,0.5);
 }
+@media (max-width: 768px) { .site-header { min-height: 7.5vw; }}
+@media (max-width: 480px) { .site-header { min-height: 10vw; }}
 
+/* Pour aligner le contenu */
 .header-inner {
   width: 100%;
   margin: 0 1.5vw;
@@ -23,59 +27,126 @@
   align-items: center;
 }
 
+/* Paramètres pour le titre */
 .brand-name {
   font-size: 3vw;
   font-weight: 700;
   color: white;
   letter-spacing: 1px;
-  text-transform: uppercase;                  /* optionnel : met en majuscule */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);  /* un petit effet pour ressortir sur le fond */
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
+@media (max-width: 768px) { .brand-name { font-size: 1vw; }}
+@media (max-width: 480px) { .brand-name { font-size: 3vw; }}
 
+/* Navigation sur les différentes pages */
 .site-nav {
   display: flex;
   font-size: 1.2vw;
   gap: 1.5rem;
   align-items: center;
 }
-
 .site-nav a {
   text-decoration: none;
   color: #ccc;
-  padding: 0.5rem 0.75rem;                    /* un peu de padding pour "respirer" */
-  border-radius: 5px;                          /* coins arrondis pour un style plus moderne */
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
   transition: all 0.2s ease;
 }
-
 .site-nav a:hover {
   color: white;
-  background-color: rgba(255,255,255,0.1);    /* effet léger au survol */
-  transform: translateY(-2px);                /* petite animation pour le hover */
+  background-color: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
 }
 
-/* Logo à droite */
-.site-logo {
-  height: 50px;                               /* ajuster selon ton image */
-  object-fit: contain;
+/* Burger menu */
+.burger {
+  display: none; 
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001; /* devant le menu */
 }
 
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Menu drawer mobile */
 @media (max-width: 768px) {
-  .brand-name {
-    font-size: 1vw;
+  .burger {
+    display: flex;
   }
 
+  /* Cache la navigation par défaut */
   .site-nav {
+    position: fixed;
+    top: 10vw;
+    left: -250px;
+    background-color: rgba(0,0,0,0.8); /* semi-transparent si image trop claire */
+    background-blend-mode: darken;
+    background-image: url('/assets/img/header_menu.webp'); /* ton image ici */
+    
+    background-size: cover;       /* couvre tout le menu */
+    background-position: center;  /* centrée */
+    background-repeat: no-repeat; /* pas de répétition */
+    
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 0 10px 10px 0;
+    min-width: max-content;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    max-height: 90vh;
+    overflow-y: auto;
   }
-}
 
-@media (max-width: 480px) {
-  .brand-name {
-    font-size: 3vw;
+  .site-nav a {
+    color: #fff; /* plus lisible sur image */
+    text-shadow: 0 0 5px rgba(0,0,0,0.7); /* pour faire ressortir le texte */
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.2s ease;
   }
 
-  .site-nav {
-    font-size: 2vw;
-    font-weight: 700;
-    gap: 0.0rem;
+  .site-nav a:hover {
+    background-color: rgba(255,255,255,0.2); /* léger contraste au hover */
+    transform: translateX(3px); /* petit effet slide */
+  }
+
+  /* Quand le menu est ouvert */
+  .site-nav.active {
+    left: 0; /* glisse depuis la gauche */
+  }
+
+  /* Animation burger en croix */
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Header : titre à droite */
+  .header-inner {
+    justify-content: space-between;
+    position: relative;
   }
 }
