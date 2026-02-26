@@ -129,9 +129,11 @@ details[open] .summary-icon {
 .profile-img {
   flex: 2;                     /* 2/5 de la box */
   width: 10%;                  /* occupe tout son flex */
-  height: 100px;                /* hauteur fixe */
-  object-fit: cover;            /* croppe pour remplir la boîte sans déformer */
+  max-width: 100%;      /* ne dépasse pas la largeur disponible */
+  height: auto;         /* garde le ratio naturel */
+  object-fit: cover;    /* crop si nécessaire */
   border-radius: 8px;           /* coins arrondis */
   border: 2px solid #9b9b9b;
   margin: 0;
+  
 }

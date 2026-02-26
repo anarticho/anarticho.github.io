@@ -10,14 +10,15 @@ lang: fr
     <!-- Profil -->
     <details open>
       <summary>
-        <span>Alexandre DS</span>
+        <span>A propos</span>
         <span class="material-icons summary-icon">expand_more</span>
       </summary>
       <div class="profile-box">
-        <img src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="Avatar" class="profile-img">
+        <img src="{{ '/assets/img/logo.webp' | relative_url }}" alt="Avatar" class="profile-img">
         <div class="profile-text">
-          <p>Développeur firmware et reverse engineer.</p>
-          <p>Passionné par la techno et le jazz.</p>
+          <h1>:: {{ site.username }} ::</h1>
+          <p>Embedded software engineer</p>
+          <p></p>
         </div>
       </div>
     </details>
