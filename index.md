@@ -17,14 +17,12 @@ lang: fr
         <img src="{{ '/assets/img/logo.webp' | relative_url }}" alt="Avatar" class="profile-img">
         <div class="text-frame">
           <h3>:: {{ site.username }} ::</h3>
+          <p>Demain j'aurai changé. Alors à quoi bon fixer une description? A relever mon ego-trip peut-être? Très peu pour moi. Voici donc quelques mots qui me font vibrer:</p>
           <ul>
-            <li>Diaspora portugaise - Saudade</li>
-            <li>Ecole d'ingénieur - Sabotage</li>
-            <li>Action directe - en Taule</li>
-            <li>Espagne libertaire - Toro</li>
-            <li>Fuite en avant - Ecrire</li>
-            <li>Je n'aime plus que toi</li>
-            <li>Triste FR >S< Sad EN</li>
+            <li>Toro · Libertaire</li>
+            <li>Ecouter · Ecrire · Exister</li>
+            <li>Sad · Sade · Saudade</li>
+            <li>·K·A·I·</li>
           </ul>
         </div>
         <div class="text-frame">
@@ -38,23 +36,16 @@ lang: fr
             <li>Informer</li>
             <li>Diffuser</li>
           </ul>
-          <p>Exister.</p>
         </div>
       </div>
     </details>
-    <!-- Switch gauche/droite -->
+    <!-- Chanson du moment -->
     <details>
       <summary>
-        <span>Switch</span>
+        <span>Musique</span>
         <span class="material-icons summary-icon">expand_more</span>
       </summary>
-      <div class="switch-box">
-        <button class="switch-btn" id="prevBtn">◀</button>
-        <div class="switch-content" id="switchContent">
-          <p>Contenu 1</p>
-        </div>
-        <button class="switch-btn" id="nextBtn">▶</button>
-      </div>
+      <div>
     </details>
     <!-- Formulaire mail -->
     <details>
