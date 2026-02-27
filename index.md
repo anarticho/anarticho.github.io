@@ -15,10 +15,30 @@ lang: fr
       </summary>
       <div class="profile-box">
         <img src="{{ '/assets/img/logo.webp' | relative_url }}" alt="Avatar" class="profile-img">
-        <div class="profile-text">
-          <h1>:: {{ site.username }} ::</h1>
-          <p>Embedded software engineer</p>
-          <p></p>
+        <div class="text-frame">
+          <h3>:: {{ site.username }} ::</h3>
+          <ul>
+            <li>Diaspora portugaise - Saudade</li>
+            <li>Ecole d'ingénieur - Sabotage</li>
+            <li>Action directe - en Taule</li>
+            <li>Espagne libertaire - Toro</li>
+            <li>Fuite en avant - Ecrire</li>
+            <li>Je n'aime plus que toi</li>
+            <li>Triste FR >S< Sad EN</li>
+          </ul>
+        </div>
+        <div class="text-frame">
+          <h3>:: {{ site.title }} ::</h3>
+          <p>Un blog pour souffler sur les braises :</p>
+          <ul>
+            <li>Histoire de l'anti-autoritarisme, de ses conjuguaisons et de ses erreurs de syntaxe et d'orthographe</li>
+            <li>Société du spectacle oblige, réaction à travers des billets d'humeur</li>
+            <li>Archives anarchistes, tentatives de fixer ma fumée d'être</li>
+            <li>Interfacer</li>
+            <li>Informer</li>
+            <li>Diffuser</li>
+          </ul>
+          <p>Exister.</p>
         </div>
       </div>
     </details>
