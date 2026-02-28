@@ -7,9 +7,14 @@ body {
   line-height: 1.5;
 }
 
+.content {
+  flex: 1 1 auto;    /* prend tout l'espace restant */
+  overflow-y: auto;  /* scroll uniquement ici si besoin */
+  padding: 20px;
+}
+
 .wrapper {
   display: flex;
-  min-height: 100vh; /* toujours full height */
 }
 
 .main {
@@ -17,6 +22,7 @@ body {
   padding: 20px;
   overflow-y: auto;
   transition: margin-left 0.3s ease;
+  padding-bottom: 4rem; /* hauteur du footer */
 }
 
 /* --- Toggle du volet --- */
