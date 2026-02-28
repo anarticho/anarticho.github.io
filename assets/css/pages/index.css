@@ -7,10 +7,11 @@ body {
   line-height: 1.5;
 }
 
+/* Ici pour forcer le scroll sur la page entière, pas juste le main */
+/* Sinon on perd le footer */
 .content {
   flex: 1 1 auto;    /* prend tout l'espace restant */
   overflow-y: auto;  /* scroll uniquement ici si besoin */
-  padding: 20px;
 }
 
 .wrapper {
