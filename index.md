@@ -45,7 +45,14 @@ lang: fr
         <span>Musique</span>
         <span class="material-icons summary-icon">expand_more</span>
       </summary>
-      <div>
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/bwl6njgJ34Q?si=vh6SY9fw2LWnlf3O"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          heigth="100%"
+          allowfullscreen>
+        </iframe>
+      </div>
     </details>
     <!-- Formulaire mail -->
     <details>
