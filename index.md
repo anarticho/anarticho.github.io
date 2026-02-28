@@ -49,7 +49,6 @@ lang: fr
         <iframe 
           src="https://www.youtube.com/embed/bwl6njgJ34Q?si=vh6SY9fw2LWnlf3O"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          heigth="100%"
           allowfullscreen>
         </iframe>
       </div>
@@ -61,11 +60,11 @@ lang: fr
         <span class="material-icons summary-icon">expand_more</span>
       </summary>
       <div class="form-box">
-        <form action="mailto:{{ site.contact_email }}" method="post" enctype="text/plain">
-          <input type="text" name="name" placeholder="Nom" required>
+        <form action="https://formspree.io/f/xjgezzyr" method="POST">
           <input type="email" name="email" placeholder="Email" required>
           <textarea name="message" placeholder="Message" rows="3" required></textarea>
           <button type="submit">Envoyer</button>
+          <p class="form-status"></p>
         </form>
       </div>
     </details>
@@ -82,3 +81,4 @@ lang: fr
 </div>
 
 <script src="{{ '/assets/js/panel.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/contact.js' | relative_url }}"></script>
