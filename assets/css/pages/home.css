@@ -1,0 +1,79 @@
+.index-body {
+  width: 100%;
+}
+
+/* Sections générales */
+section {
+  padding: 4rem 10%;
+}
+
+/* Séparateur élégant */
+.separator {
+  height: 1px;
+  width: 60%;
+  margin: 0 auto;
+  background: linear-gradient(to right, transparent, #999, transparent);
+  opacity: 0.4;
+}
+
+/* Dernier post */
+.latest-post h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.post-preview {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+/* Bloc catégorie */
+.category-block {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.category-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.category-image img {
+  width: 20rem;
+  max-width: 450px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.category-text {
+  flex: 1;
+}
+
+.category-text h2 {
+  margin-bottom: 1rem;
+}
+
+.category-text p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .category-block,
+  .category-block.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .category-text p {
+    text-align: left;
+  }
+}

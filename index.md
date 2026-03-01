@@ -11,9 +11,7 @@ lang: fr
     <span class="material-icons sp-icon-open">keyboard_double_arrow_right</span>
     <span class="material-icons sp-icon-close">keyboard_double_arrow_left</span>
   </button>
-  <div class="index-body">
-    <!-- Ton contenu principal ici -->
-  </div>
+  {% include home.html %}
 </div>
 
 <script src="{{ '/assets/js/panel.js' | relative_url }}"></script>

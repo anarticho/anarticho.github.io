@@ -1,0 +1,51 @@
+<div class="index-body">
+    <section class="latest-post">
+    <h2>Dernière publication</h2>
+
+    {% assign latest = site.posts.first %}
+    <article class="post-preview">
+        <h3><a href="{{ latest.url }}">{{ latest.title }}</a></h3>
+        <p>{{ latest.excerpt }}</p>
+        <a class="read-more" href="{{ latest.url }}">Lire la suite →</a>
+    </article>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="category-block reverse">
+    <div class="category-image">
+        <img src="/assets/img/index/home_effusions.webp" alt="Effusion">
+    </div>
+    <div class="category-text">
+        <h2>Effusions</h2>
+        <p>Société du spectacle oblige, réaction à travers de billets d'humeur.</p>
+        <a href="/categories/effusion">Explorer →</a>
+    </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="category-block">
+    <div class="category-image">
+        <img src="/assets/img/index/home_solitudes.webp" alt="Solitudes">
+    </div>
+    <div class="category-text">
+        <h2>Solitudes</h2>
+        <p>Portrait d'anarchistes, avec un regard critique sur le mouvement anti-autoritaire dans son ensemble.</p>
+        <a href="/categories/solitudes">Explorer →</a>
+    </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="category-block reverse">
+    <div class="category-image">
+        <img src="/assets/img/index/home_anarchives.webp" alt="Anarchives">
+    </div>
+    <div class="category-text">
+        <h2>Anarchives</h2>
+        <p>Archives sur mes introspections personelles.</p>
+        <a href="/categories/anarchives">Explorer →</a>
+    </div>
+    </section>
+</div>

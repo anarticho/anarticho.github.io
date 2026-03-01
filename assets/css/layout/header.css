@@ -1,7 +1,7 @@
 /* Paramètres généraux du header */
 .site-header {
   background-color: #000;
-  background-image: url("/assets/img/banner.webp");
+  background-image: url("/assets/img/default/banner.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
