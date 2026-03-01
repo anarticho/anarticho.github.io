@@ -74,6 +74,6 @@ section {
   }
 
   .category-text p {
-    text-align: left;
+    text-align: justify;
   }
 }
