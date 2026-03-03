@@ -20,7 +20,7 @@ section {
 .post-preview {
   max-width: 1000px;
   margin: 3rem auto 0 auto;
-  display: grid;
+  display: flex ;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
@@ -29,6 +29,7 @@ section {
 /* --- IMAGE CROPÉE --- */
 
 .latest-image {
+  width: 25%;
   aspect-ratio: 1 / 1; /* carré propre */
   overflow: hidden;
   border-radius: 10%;
