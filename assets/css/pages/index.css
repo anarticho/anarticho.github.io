@@ -16,7 +16,6 @@ body {
 .wrapper {
   display: flex;
   align-items: flex-start;
-  position: relative; /* important */
 }
 
 .main {
@@ -28,13 +27,9 @@ body {
 
 /* --- Toggle du volet --- */
 .side-panel-toggle {
-  position: absolute;
-  top: 20px;
-  left: 0;
-
   width: 40px;
   height: 40px;
-
+  flex-shrink: 0;
   display: grid;
   place-items: center;
 
@@ -42,8 +37,8 @@ body {
   background: #111111;
   border: none;
   border-radius: 0 5px 5px 0;
+  outline: none;
   cursor: pointer;
-  z-index: 1000;
 }
 
 .side-panel-toggle:hover {
