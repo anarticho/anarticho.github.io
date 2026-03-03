@@ -1,15 +1,32 @@
 <div class="index-body">
     <section class="latest-post">
-    <h2>Dernière publication</h2>
-
-    {% assign latest = site.posts.first %}
-    <article class="post-preview">
-        <h3><a href="{{ latest.url }}">{{ latest.title }}</a></h3>
-        <p>{{ latest.excerpt }}</p>
-        <a class="read-more" href="{{ latest.url }}">Lire la suite →</a>
-    </article>
+    <h2 class="section-title">Dernière publication</h2>
+    <div class="separator"></div>
+        {% assign latest = site.posts | sort: "date" | reverse | first %}
+        <article class="post-preview">
+            {% if latest.image %}
+            <div class="latest-image">
+                <a href="{{ latest.url }}">
+                <img src="{{ latest.image }}" alt="{{ latest.title }}">
+                </a>
+            </div>
+            {% endif %}
+            <div class="latest-content">
+                <p class="latest-date">
+                    {{ latest.date | date: "%d / %m / %Y" }}
+                </p>
+                <h3>
+                    <a href="{{ latest.url }}">{{ latest.title }}</a>
+                </h3>
+                <p>
+                    {{ latest.excerpt | strip_html | truncate: 180 }}
+                </p>
+                <a class="read-more" href="{{ latest.url }}">
+                    Lire la suite →
+                </a>
+            </div>
+        </article>
     </section>
-
     <div class="separator"></div>
 
     <section class="category-block reverse">
