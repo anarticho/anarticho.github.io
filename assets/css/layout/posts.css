@@ -1,0 +1,25 @@
+.post-article {
+  max-width: 90%;
+  margin: 1rem auto;
+  padding: 0 1.5rem;
+}
+
+.post-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.post-content {
+  text-align: justify;
+  line-height: 1.8;
+  font-family: 'Source Serif 4', serif;
+}
+
+/* L'image flotte */
+.post-float {
+  float: left;
+  width: 20%;
+  margin: 0 2rem 1rem 0;
+  border-radius: 8px;
+  
+}

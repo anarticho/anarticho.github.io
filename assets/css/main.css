@@ -4,9 +4,11 @@
 @import url("./layout/header.css");
 @import url("./layout/footer.css");
 @import url("./layout/default.css");
+@import url("./layout/posts.css");
 
 /* Components */
 
 /* Pages */
 @import url("./pages/index.css");
-@import url("./pages/home.css")
+@import url("./pages/home.css");
+@import url("./pages/effusions.css");
