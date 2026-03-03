@@ -125,6 +125,16 @@ section {
 
 /* Responsive */
 @media (max-width: 900px) {
+  .post-preview {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .latest-image {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* plus large sur mobile */
+  }
+
   .category-block,
   .category-block.reverse {
     flex-direction: column;
@@ -133,5 +143,10 @@ section {
 
   .category-text p {
     text-align: justify;
+  }
+
+  .category-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* plus large sur mobile */
   }
 }
