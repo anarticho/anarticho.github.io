@@ -1,25 +1,128 @@
 .post-article {
-  max-width: 90%;
-  margin: 1rem auto;
+  margin: 2rem auto;
   padding: 0 1.5rem;
+  font-family: 'Source Serif 4', serif;
+  color: #e0e0e0;
 }
 
 .post-title {
   text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
   margin-bottom: 2rem;
+  color: #ffffff;
 }
 
 .post-content {
   text-align: justify;
   line-height: 1.8;
-  font-family: 'Source Serif 4', serif;
+  font-size: 1.1rem;
+  color: #ddd;
 }
 
-/* L'image flotte */
+/* Titres h1, h2, h3 */
+.post-content h1 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.3rem;
+}
+
+.post-content h2 {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #ccc;
+}
+
+.post-content h3 {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #bbb;
+}
+
+/* Citations blockquote */
+.post-content blockquote {
+  border-left: 4px solid #888;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #aaa;
+  font-style: italic;
+  background-color: rgba(255,255,255,0.02);
+  border-radius: 4px;
+}
+
+/* Les liens */
+.post-content a {
+  color: #7db7ff;
+  text-decoration: underline;
+}
+
+/* Images flottantes */
 .post-float {
   float: left;
-  width: 20%;
-  margin: 0 2rem 1rem 0;
+  width: 30%;
+  margin: 0 1.5rem 1rem 0;
   border-radius: 8px;
-  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Nettoyage flottants */
+.post-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Emphase Markdown */
+.post-content em {
+  font-style: italic;
+  color: #f0f0f0;
+}
+
+.post-content strong {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+@media (min-width: 1024px) { /* seulement pour PC / grands écrans */
+  .post-article {
+    max-width: 40% !important; /* limite la largeur pour une lecture confortable */
+  }
+
+  .post-float-wrapper {
+    position: relative;
+    margin: 2rem 0;
+    height: auto; /* nécessaire pour que le conteneur prenne la hauteur du texte */
+  }
+
+  .post-float-wrapper img {
+    position: absolute;
+    top: 0;
+    max-width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .post-float-left img {
+    left: -70%; /* sort plus sur la marge gauche */
+  }
+
+  .post-float-right img {
+    right: -70%; /* sort plus sur la marge droite */
+  }
+}
+
+@media (max-width: 768px) {
+  .post-float-wrapper img {
+    width: 100%; /* par défaut, pleine largeur du conteneur */
+    max-width: 100%; /* ne dépasse jamais le conteneur */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: static; /* pas de flottement par défaut pour mobile */
+    transform: none; /* pas de translateY sur mobile */
+  }
 }
