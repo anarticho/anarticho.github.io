@@ -1,5 +1,12 @@
+.post-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
 .post-article {
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 0 1.5rem;
   font-family: 'Source Serif 4', serif;
   color: #e0e0e0;
@@ -15,7 +22,9 @@
 
 .post-content {
   text-align: justify;
-  line-height: 1.8;
+  text-justify: inter-word; /* améliore la répartition des espaces */
+  hyphens: auto;            /* coupe les mots si nécessaire */
+  line-height: 1.5;
   font-size: 1.1rem;
   color: #ddd;
 }
@@ -124,5 +133,11 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     position: static; /* pas de flottement par défaut pour mobile */
     transform: none; /* pas de translateY sur mobile */
+  }
+
+  .post-content {
+    line-height: 1.4;
+    font-size: 1.1rem;
+    color: #ddd;
   }
 }
