@@ -36,8 +36,8 @@
   text-transform: uppercase;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
-@media (max-width: 768px) { .brand-name { font-size: 1vw; }}
-@media (max-width: 480px) { .brand-name { font-size: 3vw; }}
+@media (max-width: 768px) { .brand-name { font-size: 5vw; }}
+@media (max-width: 480px) { .brand-name { font-size: 5vw; }}
 
 /* Navigation sur les différentes pages */
 .site-nav {
