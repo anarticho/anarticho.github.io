@@ -11,8 +11,8 @@ section {
 
 .section-title {
   text-align: center;
-  margin-bottom: 1.5rem;
   font-size: 2rem;
+  padding-top: 2rem;
 }
 
 @media (max-width: 768px) { .section-title { font-size: 1.5rem; }}
@@ -77,7 +77,7 @@ section {
 .separator {
   height: 1px;
   width: 60%;
-  margin: 0 auto;
+  margin: 5rem auto;
   background: linear-gradient(to right, transparent, #999, transparent);
   opacity: 0.4;
 }
