@@ -16,3 +16,13 @@ document.querySelectorAll('.side-panel details').forEach((det) => {
     });
   });
 });
+
+// --- Fermer tous les details par défaut sur mobile ---
+document.addEventListener("DOMContentLoaded", function() {
+  const mobileWidth = 768;
+  if (window.innerWidth <= mobileWidth) {
+    document.querySelectorAll(".side-panel details").forEach(d => {
+      d.removeAttribute("open");
+    });
+  }
+});

@@ -18,13 +18,6 @@ body {
   align-items: flex-start;
 }
 
-.main {
-  flex-grow: 1;
-  padding: 20px;
-  transition: margin-left 0.3s ease;
-  padding-bottom: 4rem; /* hauteur du footer */
-}
-
 /* --- Toggle du volet --- */
 .side-panel-toggle {
   width: 40px;
@@ -97,7 +90,7 @@ body {
 }
 
 .side-panel details summary span {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .side-panel summary {
@@ -142,16 +135,6 @@ details[open] .summary-icon {
   border: 2px solid #9b9b9b;
   margin: 0 1rem 1rem 0;
   shape-outside: margin-box;
-}
-
-
-@media (max-width: 768px) {
-  .profile-img {
-    float: none;
-    width: 100%;
-    margin: 0 0 1rem 0;
-    shape-outside: none;
-  }
 }
 
 .text-frame {
@@ -259,4 +242,70 @@ details[open] .summary-icon {
 
 .form-box button:hover {
   background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .side-panel {
+    position: relative;
+    width: 100% !important;
+    box-shadow: none;
+    border-radius: 0;
+    background: linear-gradient(to bottom, #0f0f12, #181818, #2e2e2e);
+  }
+
+  .side-panel-toggle {
+    display: none;         /* plus besoin du bouton toggle sur mobile */
+  }
+
+  .main {
+    padding: auto; /* padding plus compact */
+  }
+
+  .side-panel details {
+    width: 90%;
+    padding: 0 0.5rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+  }
+
+  /* Accordéons : améliorer la taille des summary pour mobile */
+  .side-panel details summary {
+    font-size: 1.2rem;
+  }
+
+  .side-panel details[open] > *:not(summary) {
+    padding: 0.75rem 1rem;
+  }
+
+  .profile-img {
+    width: 120px;          /* taille réduite sur mobile */
+    height: 120px;         /* carré pour le mask */
+    margin: 0 auto 1rem;   /* centré horizontalement */
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;    /* arrondi complet pour fallback */
+    
+    /* masque circulaire avec dégradé */
+    -webkit-mask-image: radial-gradient(circle, black 20%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: cover;
+
+    mask-image: radial-gradient(circle, black 20%, transparent 100%);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+
+    /* effet shadow autour du cercle */
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+  
+  .profile-box {
+    display: flex;
+    flex-direction: column;
+  }
 }
