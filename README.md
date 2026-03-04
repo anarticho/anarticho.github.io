@@ -25,7 +25,7 @@ Assuming you configured on SSH key (at 2. the location and the name)
 - `bundle exec jekyll serve --host 0.0.0.0` (will run on port 4000)
 - Check for *0.0.0.0:4000* using `ss -tulpn | grep 4000` command
 - On powershell admin (assuming running jekyll on WSL), run:
-    - `advfirewall firewall add rule name="Jekyll 4000" dir=in action=allow protocol=TCP localport=4000`
+    - `netsh advfirewall firewall add rule name="Jekyll 4000" dir=in action=allow protocol=TCP localport=4000`
     - `netsh interface portproxy add v4tov4 listenport=4000 listenaddress=0.0.0.0 connectport=4000 connectaddress=127.0.0.1`
 - Then retrieve your IP using `ipconfig /all`
 
