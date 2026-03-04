@@ -29,6 +29,10 @@ Assuming you configured on SSH key (at 2. the location and the name)
     - `netsh interface portproxy add v4tov4 listenport=4000 listenaddress=0.0.0.0 connectport=4000 connectaddress=127.0.0.1`
 - Then retrieve your IP using `ipconfig /all`
 
+### To clean connection
+- `netsh advfirewall firewall delete rule name="Jekyll 4000"`
+- `netsh interface portproxy delete v4tov4 listenport=4000 listenaddress=0.0.0.0`
+
 ## License
 
 This work is published under [MIT][mit] License.
