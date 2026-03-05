@@ -1,4 +1,5 @@
 /* Base */
+@import url("./base/text_link.css");
 
 /* Layout */
 @import url("./layout/header.css");
