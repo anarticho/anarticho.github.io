@@ -11,11 +11,14 @@ const down = document.querySelector(".arrow.down")
 
 function selectDate(index){
 
-  if(index < 0 || index >= dates.length) return
+  if(index < 0) 
+    index = 0
+
+  if(index >= dates.length) 
+    index = dates.length - 1
 
   dates[index].click()
   current = index
-
 }
 
 up.onclick = () => selectDate(current - 1)
@@ -34,6 +37,9 @@ dates.forEach((date, index) => {
 
     page.style.backgroundImage = `url(${date.dataset.bg})`
 
-    current = index
+    document.querySelectorAll('.date').forEach(d => d.classList.remove('active'));
+    date.classList.add('active');
+
+    current = index;
   })
 })

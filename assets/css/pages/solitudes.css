@@ -30,7 +30,6 @@
 }
 
 .big-date{
-
   color:#e3a625;
   font-style:italic;
 
@@ -69,7 +68,12 @@
   transition:0.2s;
 
   font-size: 1.5rem;
-  font-weight:200;
+  font-weight:700;
+}
+
+.date.active {
+  color: #ffbc2b;
+  opacity:1;
 }
 
 .date:hover{
