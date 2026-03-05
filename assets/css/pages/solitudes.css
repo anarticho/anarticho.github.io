@@ -39,7 +39,6 @@
 }
 
 #event-title{
-
   font-size:60px;
   font-weight:800;
   line-height:1.1;
@@ -48,7 +47,6 @@
 }
 
 .timeline{
-
   display:flex;
   flex-direction:column;
 
@@ -58,16 +56,20 @@
   padding-left:20px;
 
   color:#c49227;
-  font-style:italic;
 }
 
 .date{
-
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+  
   cursor:pointer;
+  display:flex;
   position:relative;
 
   opacity:0.75;
   transition:0.2s;
+
+  font-size: 1.5rem;
+  font-weight:200;
 }
 
 .date:hover{
@@ -75,7 +77,6 @@
 }
 
 .date.active::before{
-
   content:"";
 
   position:absolute;
@@ -90,17 +91,28 @@
 
   border-radius:50%;
 
-  background:#e3a625;
+  background:#ffbc2b;
 }
 
 .arrow{
+  display:flex;
+  position:relative;
 
+  background:none;
+  border:none;
+  padding:0;
   cursor:pointer;
-  font-size:20px;
 
-  opacity:0.8;
+  left: -7px;
 }
 
-.arrow:hover{
+.arrow img{
+  width: 4rem;
+  opacity:0.8;
+  transition:0.2s;
+}
+
+.arrow:hover img{
   opacity:1;
+  transform:scale(1.1);
 }

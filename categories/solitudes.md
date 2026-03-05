@@ -19,7 +19,9 @@ permalink: /solitudes/
   <div class="timeline-line"></div>
 
   <div class="timeline">
-    <div class="arrow up">⌃</div>
+    <button class="arrow up">
+        <img src="{{ site.baseurl }}/assets/img/solitudes/up.png" alt="previous date">
+    </button>
     <div class="date">2011</div>
     <div class="date active"
          data-year="2012"
@@ -32,7 +34,9 @@ permalink: /solitudes/
     <div class="date">2014</div>
     <div class="date">2015</div>
     <div class="date">2016</div>
-    <div class="arrow down">⌄</div>
+    <button class="arrow down">
+        <img src="{{ site.baseurl }}/assets/img/solitudes/down.png" alt="next date">
+    </button>
   </div>
 
 </div>
