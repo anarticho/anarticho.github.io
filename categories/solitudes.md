@@ -12,9 +12,7 @@ permalink: /solitudes/
     <div class="content-box">
         {% assign first = site.timeline | sort: "year" | first %}
         <h1 id="event-title">{{ first.title }}</h1>
-        <p id="event-text">
-            {{ first.content }}
-        </p>
+        <p id="event-text"></p>
     </div>
     <div class="timeline-line"></div>
     <div class="timeline">
