@@ -5,38 +5,32 @@ permalink: /solitudes/
 ---
 
 <div class="timeline-page">
-
-  <div class="content-box">
-    <div class="big-date" id="big-date">2012</div>
-    <h1 id="event-title">Our nice super title</h1>
-    <p id="event-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-
-  </div>
-
-  <div class="timeline-line"></div>
-
-  <div class="timeline">
-    <button class="arrow up">
-        <img src="{{ site.baseurl }}/assets/img/solitudes/up.png" alt="previous date">
-    </button>
-    <div class="date">2011</div>
-    <div class="date active"
-         data-year="2012"
-         data-title="Our nice super title"
-         data-text="Lorem ipsum"
-         data-bg="/assets/img/bg1.jpg">
-      2012
+    <div class="bg-container"></div>
+    <div class="content-box">
+        {% assign first = site.timeline | sort: "year" | first %}
+        <h1 id="event-title">{{ first.title }}</h1>
+        <p id="event-text">
+            {{ first.content }}
+        </p>
     </div>
-    <div class="date">2013</div>
-    <div class="date">2014</div>
-    <div class="date">2015</div>
-    <div class="date">2016</div>
-    <button class="arrow down">
-        <img src="{{ site.baseurl }}/assets/img/solitudes/down.png" alt="next date">
-    </button>
+    <div class="timeline-line"></div>
+    <div class="timeline">
+        <div class="arrow up">
+        <img src="{{ site.baseurl }}/assets/img/solitudes/up.png">
+        </div>
+        {% assign events = site.timeline | sort: "year" %}
+        {% for event in events %}
+        <div class="date"
+            data-title="{{ event.title }}"
+            data-text="{{ event.content | strip_html | strip_newlines }}"
+            data-bg="{{ event.bg }}">
+        {{ event.year }}
+        </div>
+        {% endfor %}
+        <div class="arrow down">
+        <img src="{{ site.baseurl }}/assets/img/solitudes/down.png">
+        </div>
+    </div>
   </div>
 
 </div>

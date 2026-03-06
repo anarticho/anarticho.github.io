@@ -3,6 +3,8 @@ const title = document.getElementById("event-title")
 const text = document.getElementById("event-text")
 const page = document.querySelector(".timeline-page")
 
+const bg = document.querySelector('.bg-container');
+
 // Handle UP/DOWN arrows
 let current = 0
 
@@ -35,7 +37,7 @@ dates.forEach((date, index) => {
     title.textContent = date.dataset.title
     text.textContent = date.dataset.text
 
-    page.style.backgroundImage = `url(${date.dataset.bg})`
+    bg.style.backgroundImage = `url(${date.dataset.bg})`;
 
     document.querySelectorAll('.date').forEach(d => d.classList.remove('active'));
     date.classList.add('active');
