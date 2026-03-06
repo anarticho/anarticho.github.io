@@ -5,7 +5,10 @@ permalink: /solitudes/
 ---
 
 <div class="timeline-page">
-    <div class="bg-container"></div>
+    <div class="bg-container">
+        <div class="bg bg-a"></div>
+        <div class="bg bg-b"></div>
+    </div>
     <div class="content-box">
         {% assign first = site.timeline | sort: "year" | first %}
         <h1 id="event-title">{{ first.title }}</h1>
@@ -20,11 +23,14 @@ permalink: /solitudes/
         </div>
         {% assign events = site.timeline | sort: "year" %}
         {% for event in events %}
-        <div class="date"
+        <div class="timeline-date"
             data-title="{{ event.title }}"
             data-text="{{ event.content | strip_html | strip_newlines }}"
             data-bg="{{ event.bg }}">
-        {{ event.year }}
+            <div class="timeline-date-text">
+                <div class="timeline-date-title">{{ event.title }}</div>
+                <div class="timeline-date-period">({{ event.year }} - {{ event.last }})</div>
+            </div>
         </div>
         {% endfor %}
         <div class="arrow down">
