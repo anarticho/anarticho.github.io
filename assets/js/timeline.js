@@ -7,7 +7,7 @@ const page = document.querySelector(".timeline-page")
 const bgA = document.querySelector(".bg-a")
 const bgB = document.querySelector(".bg-b")
 
-const box = document.querySelector(".content-box")
+const boxes = document.querySelectorAll(".content-box")
 
 const up = document.querySelector(".arrow.up")
 const down = document.querySelector(".arrow.down")
@@ -30,18 +30,22 @@ function updateText(titleText, textContent){
     box.classList.add("active")
 }
 
+// Function to select a date by index
 function selectDate(index){
-
-  if(index < 0) 
+  // Clamp the index to valid range
+  if(index < 0) {
     index = 0
-
-  if(index >= dates.length) 
+  }
+  // Assuming dates.length is the total number of dates available
+  if(index >= dates.length) {
     index = dates.length - 1
-
+  }
+  // Trigger the click event on the corresponding date element
   dates[index].click()
   current = index
 }
 
+// Function to handle background transition
 function selectBack(url){
     bg_inactive.style.backgroundImage = `url(${url})`
     bg_inactive.classList.add("visible")
@@ -51,30 +55,24 @@ function selectBack(url){
     bg_inactive = tmp
 }
 
+// Handle click on arrows
 up.onclick = () => selectDate(current - 1)
 down.onclick = () => selectDate(current + 1)
 
 // Handle click on menu
 dates.forEach((date, index) => {
-
+  // Click event listener to each date element
   date.addEventListener("click", () => {
-    
+    // Update background
     const url = date.dataset.bg;
-    console.log("bg:", url);
     selectBack(url);
-
-    document.querySelector(".active")?.classList.remove("active")
-    date.classList.add("active")
-
-    title.textContent = date.dataset.title
-    text.textContent = date.dataset.text
-
+    // Update active state of dates
     document.querySelectorAll('.timeline-date').forEach(d => d.classList.remove('active'));
     date.classList.add('active');
-
-    // attendre la durée de la transition CSS
-    updateText(date.dataset.title, date.dataset.text)
-
+    // Update text content
+    boxes.forEach(box => box.classList.remove("active"))
+    boxes[index].classList.add("active")
+    // Update current index
     current = index;
   })
 })

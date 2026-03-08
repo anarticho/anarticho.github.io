@@ -9,10 +9,14 @@ permalink: /solitudes/
         <div class="bg bg-a"></div>
         <div class="bg bg-b"></div>
     </div>
-    <div class="content-box">
-        {% assign first = site.timeline | sort: "year" | first %}
-        <h1 id="event-title">{{ first.title }}</h1>
-        <p id="event-text"></p>
+    <div class="content-container">
+        {% assign events = site.timeline | sort: "year" %}
+        {% for event in events %}
+        <div class="content-box">
+            <h1>{{ event.title }}</h1>
+            <p>{{ event.content }}</p>
+        </div>
+        {% endfor %}
     </div>
     <div class="timeline-line"></div>
     <div class="timeline">
