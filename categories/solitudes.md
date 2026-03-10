@@ -21,7 +21,7 @@ permalink: /solitudes/
     <div class="timeline-line"></div>
     <div class="timeline">
         <div class="arrow up">
-        <img src="{{ site.baseurl }}/assets/img/solitudes/up.png">
+            <img src="{{ site.baseurl }}/assets/img/solitudes/up.png">
         </div>
         {% assign events = site.timeline | sort: "year" %}
         {% for event in events %}
@@ -36,11 +36,9 @@ permalink: /solitudes/
         </div>
         {% endfor %}
         <div class="arrow down">
-        <img src="{{ site.baseurl }}/assets/img/solitudes/down.png">
+            <img src="{{ site.baseurl }}/assets/img/solitudes/down.png">
         </div>
     </div>
-  </div>
-
 </div>
 
 <script src="{{ '/assets/js/timeline.js' | relative_url }}"></script>
